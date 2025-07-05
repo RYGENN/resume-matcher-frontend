@@ -1,12 +1,14 @@
-# React + Vite
+ React + Vite
+# Resume Matcher Tool
+NLP-Based Resume Ranking Tool for Job Descriptions 📄
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# User Interface
+![image](https://github.com/user-attachments/assets/756739dc-5440-426c-af4e-6e4a87d5cb30)
 
-Currently, two official plugins are available:
+# To run this project locally 
+ First go to  vscode </br>
+ step 1 : clone this repo using - git clone url (replace this with actual project url) </br>
+ step 2 : open cmd ( make sure you are on the right dir.) and then run -> npm install </br>
+ step 3 : run -> npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
