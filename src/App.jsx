@@ -9,13 +9,23 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isUploadingJD, setIsUploadingJD] = useState(false);
   const [isUploadingResumes, setIsUploadingResumes] = useState(false);
+
+  // API Base URL from env
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  
+  // Alternative: Manual toggle 
+  // const API_URLS = {
+  //   development: 'http://localhost:5000',
+  //   production: 'https://resume-matcher-api-fagrgsgrbwb2eac0.centralindia-01.azurewebsites.net'
+  // };
+  // const API_BASE_URL = API_URLS.production; // Change to 'development' or 'production'
  
   const uploadJobDescription = async () => {
     try {
       setIsUploadingJD(true);
       const formData = new FormData();
       formData.append('pdf', jobFile);
-      await axios.post('http://localhost:5000/upload_job_description', formData);
+      await axios.post(`${API_BASE_URL}/upload_job_description`, formData);
       alert('Job Description Uploaded!');
     } catch (error) {
       alert('Failed to upload job description!');
@@ -29,7 +39,7 @@ function App() {
       setIsUploadingResumes(true);
       const formData = new FormData();
       resumeFiles.forEach(file => formData.append('pdfs', file));
-      await axios.post('http://localhost:5000/upload_candidate_resumes', formData);
+      await axios.post(`${API_BASE_URL}/upload_candidate_resumes`, formData);
       alert('Resumes Uploaded!');
     } catch (error) {
       alert('Failed to upload resumes!');
@@ -40,7 +50,7 @@ function App() {
 
   const calculateRanks = async () => {
     setIsLoading(true);
-    const res = await axios.get('http://localhost:5000/calculate_ranks');
+    const res = await axios.get(`${API_BASE_URL}/calculate_ranks`);
     setResults(res.data);
     setIsLoading(false);
   };
